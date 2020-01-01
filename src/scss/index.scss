@@ -1,0 +1,370 @@
+@import "reset";
+@import "fonts";
+
+/* Переменные с цветами */
+$black: #172B4D;
+$white: #ffffff;
+$main-purple: #6554C0;
+$dark-purple: #403294;
+
+/* Базовые стили */
+
+body {
+    background-color: #F4F5F7;
+    font-family: 'Montserrat', sans-serif;
+    color: $black;
+}
+
+label {
+    font-size: 14px;
+    padding-bottom: 8px;
+}
+
+input, textarea {
+    border: 1px solid #C1C7D0;
+    border-radius: 12px;
+    outline: none;
+    padding: 8px 16px;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    color: $black;
+    width: 50%;
+    display: block;
+    margin-top: 8px;
+    resize: none;
+    transition: all 0.4s ease;
+    box-sizing: border-box;
+
+    &:focus {
+        border-color: $main-purple;
+        background: #FAFBFC;
+    }
+}
+
+/* Стили элементов */
+
+.button {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    border: none;
+    border-radius: 50px;
+    height: 52px;
+    padding: 0 32px;
+    padding-left: 56px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.4s ease;
+
+    &:before {
+        position: absolute;
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        content: "\f02d";
+        color: #6B778C;
+        font-size: 16px;
+        line-height: 52px;
+        top: 0;
+        left: 32px;
+        transition: all 0.4s ease;
+    }
+}
+
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.toggles {
+    margin-top: 60px;
+    margin-bottom: 44px;
+}
+
+.toggles__btn {
+    background: transparent;
+    border-radius: 0;
+    color: #8993A4;
+    font-size: 20px;
+
+    &:before {
+        color: #8993A4;
+    }
+
+    &:hover {
+        color: $main-purple;
+    }
+
+    &:hover:before {
+        color: $main-purple;
+    }
+}
+
+.toggles__btn--active {
+    position: relative;
+    color: $main-purple;
+
+    &:before {
+        color: $main-purple;
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 2px;
+        background: $main-purple;
+        border-radius: 50px;
+        bottom: 0;
+        left: 0;
+        transition: all 0.44s ease;
+    }
+}
+
+.toggles__btn--archive {
+    &:before {
+        content: "\f187";
+    }
+}
+
+.title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+}
+
+/* Стили карточки книги */
+
+.book, .book-add-container {
+    background: $white;
+    padding: 32px;
+    padding-bottom: 24px;
+    border-radius: 20px;
+    border: 1px solid #EBECF0;
+    margin-bottom: 8px;
+    transition: all 0.4s ease;
+    opacity: 1;
+}
+
+.book {
+    &:nth-child(1) {
+        margin-top: 64px;
+    }
+}
+
+.book__drag-block {
+    width: 44px;
+    height: 44px;
+    float: left;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.book__drag-icon {
+    display: inline-block;
+    color: #A5ADBA;
+    line-height: 20px;
+    width: 44px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.book-description {
+    display: inline-block;
+    width: 72%;
+}
+
+.book-description__title, .book-add__title {
+    font-size: 18px;
+    letter-spacing: -0.6px;
+    font-weight: 500;
+    margin-bottom: 12px;
+}
+
+.book-description__text {
+    font-size: 14px;
+    line-height: 22px;
+    color: #5E6C84;
+}
+
+.book__read-btn {
+    background: #EAE6FF;
+    color: $dark-purple;
+    float: right;
+    height: 36px;
+    padding: 0 24px;
+    padding-left: 48px;
+
+    &:before {
+        content: "\f058";
+        line-height: 36px;
+        left: 24px;
+        color: $dark-purple;
+        opacity: 0.5;
+    }
+
+    &:hover {
+        background: $main-purple;
+        color: $white;
+    }
+
+    &:hover::before {
+        opacity: 1;
+        color: $white;
+    }
+}
+
+/* Стили формы добавления книги */
+
+#book-add__name {
+    margin-bottom: 20px;
+    border-radius: 50px;
+    height: 44px;
+}
+
+.book-add__title {
+    margin-bottom: 20px;
+}
+
+.book-add__btn {
+    background: #36B37E;
+    color: $white;
+    margin-top: 20px;
+
+    &:hover {
+        background: $main-purple;
+    }
+
+    &:before {
+        content: "\f055";
+        color: $white;
+    }
+}
+
+.book-add-container {
+    margin-bottom: 60px;
+    padding-bottom: 32px;
+    margin-top: 44px;
+}
+
+/* Стили для архива */
+
+.book-description--archive {
+    margin-top: 44px;
+    width: 100%;
+
+    &:nth-child(1) {
+        margin-top: 20px;
+    }
+}
+
+.archive-container {
+    margin-bottom: 60px;
+}
+
+.invisible {
+    display: none;
+}
+
+/* Стили для наследования */
+
+%book--drag-puseudo {
+    position: absolute;
+    display: block;
+    content: "";
+    border: 2px dashed $dark-purple;
+    box-sizing: border-box;
+    width: 100%;
+    height: 20px;
+    left: 0px;
+    border-radius: 8px;
+    background: $white;
+}
+
+/* Стили для Drag'n'Drop */
+
+.book--drag-target {
+    margin-bottom: 44px;
+    transition: all 0.2s ease;
+    position: relative;
+
+    &:after {
+        @extend %book--drag-puseudo;
+        bottom: -32px;
+        transition: all 0.2s ease;
+    }
+}
+
+.book--drag-target-first {
+    margin-top: 68px;
+    transition: all 0.4s ease;
+    position: relative;
+
+    &:before {
+        @extend %book--drag-puseudo;
+        top: -28px;
+        transition: all 0.4s ease;
+    } 
+}
+
+.drag-start {
+    width: 0px;
+    height: 0px;
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+/* Adaptive */
+
+@media screen and (max-width: 960px) {
+    .container {
+        width: 90%;
+    }
+
+    .book-description {
+        width: 50%;
+    }
+
+    input, textarea {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 668px) {
+    .book-description {
+        width: 80%;
+    }
+
+    .book__read-btn  {
+        float: none;
+        margin-top: 20px;
+    }
+
+    .toggles__btn {
+        font-size: 14px;
+        padding: 0 12px;
+        padding-left: 40px;
+
+        &:before {
+            left: 16px;
+        }
+    }
+
+    .book__drag-block {
+        width: 32px;
+        height: 32px;
+        margin-right: 12px;
+    }
+
+    .book__drag-icon {
+        width: 32px;
+    }
+
+    .books-container, .book-add-container {
+        padding: 20px;
+        padding-bottom: 20px;
+        margin-bottom: 8px;
+    }
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=cyrillic" rel="stylesheet">
+    <title>ToRead</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toggles">
+            <button class="toggles__btn toggles__btn--to-read toggles__btn--active button">Список книг</button>
+            <button class="toggles__btn toggles__btn--archive button">Архив</button>
+        </div>
+        <div class="to-read-container">
+            <h1 class="title">Хочу прочитать</h1>
+            <div class="books-container"></div>
+            <div class="book-add-container">
+                <form class="book-add" action="">
+                    <h2 class="book-add__title">Новая книга</h2>
+
+                    <label for="book-add__name" class="book-add__name-label">Название книги</label>
+                    <input id="book-add__name" type="text" required>
+
+                    <label for="book-add__description" class="book-add__description-label">Описание книги</label>
+                    <textarea id="book-add__description" cols="30" rows="4" required></textarea>
+
+                    <button class="book-add__btn button">Добавить</button>
+                </form>
+            </div>
+        </div>
+        <div class="archive-container invisible">
+            <h1 class="title">Уже прочитаны</h1>
+            <div class="archive-books"></div>
+        </div>
+    </div> 
+    <script src="js/index-min.js"></script>
+</body>
+</html>
